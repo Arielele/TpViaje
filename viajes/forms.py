@@ -7,3 +7,8 @@ class Viaje_form(forms.Form):
     fecha_regreso = forms.DateField()
 
 
+# class Hotel_form(forms.Form):
+#     nombre = forms.CharField(max_length=30)
+#     provincia = forms.CharField(max_length=20)
+#     domicilio = forms.CharField(max_length=50)
+#     precio = forms.FloatField()

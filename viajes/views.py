@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from multiprocessing import context
 from django.shortcuts import render
 
@@ -26,6 +27,18 @@ def listar_hoteles(request):
     return render ( request, 'lista_hoteles.html', context=context)
 
 def create_viaje(request):
-    form= Viaje_form()
-    context = {'form': form}
-    return render( request, 'create_viaje.html', context = context )
+    if request.method == 'GET':
+       form= Viaje_form()
+       context = {'form': form}
+       return render( request, 'create_viaje.html', context = context )
+    else:
+        form= Viaje_form(request.POST)
+        if form.is_valid():
+            new_viaje = Viaje.objects.create(
+               precio = form.cleaned_data ['precio'],
+               destino = form.cleaned_data ['destino'],
+               fecha_salida = form.cleaned_data ['fecha_salida'],
+               fecha_regreso = form.cleaned_data ['fecha_regreso'],
+            )
+            context = {'new_viaje' : new_viaje}
+        return render( request, 'create_viaje.html', context= context)

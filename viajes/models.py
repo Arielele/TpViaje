@@ -17,7 +17,7 @@ class Destino(models.Model):
 
 
 class Hotel(models.Model):
-    name = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30)
     provincia = models.CharField(max_length=20)
     domicilio = models.CharField(max_length=50)
     precio = models.FloatField()

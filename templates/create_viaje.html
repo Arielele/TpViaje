@@ -1,31 +1,34 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-   Arma tu vuelo
+   Arma tu viaje
 {% endblock %}   
 
 {% block contenido %}
+{% if form %}
+      <h2>Arma tu viaje!</h2>
 
-<h2>Arma tu vuelo!</h2>
-Acá podrás armar tu viaje cuando termine el mantenimiento!
+      <form method="POST" action="">
+         {% csrf_token %} 
+         <table>
+            {{form.as_table}}
+         </table>
+         <input type="submit", value="Crear">
+      </form>
+{% elif new_viaje %}
+
+   <div class="card" style="width: 25rem;">
+      <img class ="card-img-top" src=".../100px180/" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">{{new_viaje.destino}}</h5>
+      <p class="card-text">Fecha salida: {{new_viaje.fecha_salida}}</p>
+      <p class="card-text">Fecha regreso: {{new_viaje.fecha_regreso}}</p>
+      <p class="card-text">precio: ${{new_viaje.precio}}</p>
+      <a href="#" class="btn btn-primary">Aceptar y Continuar</a>
+      </div>
+   </div>
+
+{% endif %}
 
 {% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   
-   <title>Crear</title>
-</head>
-<body>
-    <form action="/CrearVuelo" method="GET">
-           <input type="text" name="prd">
-
-           <input type="submit" value="buscar">
-
-
-
-    
-    </form>
-</body>
-</html>
