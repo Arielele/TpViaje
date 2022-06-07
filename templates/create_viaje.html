@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+   Arma tu vuelo
+{% endblock %}   
+
+{% block contenido %}
+
+<h2>Arma tu vuelo!</h2>
+Acá podrás armar tu viaje cuando termine el mantenimiento!
+
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+   <title>Crear</title>
+</head>
+<body>
+    <form action="/CrearVuelo" method="GET">
+           <input type="text" name="prd">
+
+           <input type="submit" value="buscar">
+
+
+
+    
+    </form>
+</body>
+</html>
