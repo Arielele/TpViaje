@@ -15,10 +15,10 @@ def listar_viajes(request):
 
 
 def listar_destinos(request):
-    lista_destinos = Destino.objects.all()
-    context = {'lista_destinos': lista_destinos}
+     lista_destinos = Destino.objects.all()
+     context = {'lista_destinos': lista_destinos}
 
-    return render ( request, 'lista_destinos.html', context=context)
+     return render ( request, 'lista_destinos.html', context=context)
 
 def listar_hoteles(request):
     lista_hoteles = Hotel.objects.all()
@@ -38,7 +38,13 @@ def create_viaje(request):
                precio = form.cleaned_data ['precio'],
                destino = form.cleaned_data ['destino'],
                fecha_salida = form.cleaned_data ['fecha_salida'],
-               fecha_regreso = form.cleaned_data ['fecha_regreso'],
+               fecha_regreso = form.cleaned_data ['fechSa_regreso'],
             )
             context = {'new_viaje' : new_viaje}
         return render( request, 'create_viaje.html', context= context)
+
+def buscar_viajes(request):
+    print(request.GET)
+    viajes = Viaje.objects.filter(destino__icontains = request.GET['buscar'])
+    context = {'viajes' : viajes}
+    return render(request, 'buscar-viajes.html', context = context)

@@ -7,10 +7,12 @@ Viajes disponibles
 {% block contenido %}
 
 <h1>Viajes disponibles:</h1>
+
+  En mantenimiento...
 {% for viaje in lista_viajes %} 
 
 <div class="card" style="width: 25rem;">
-    <img src= https://st.depositphotos.com/1107016/1239/v/950/depositphotos_12390723-stock-illustration-airplane-travel.jpg class="card-img-top" alt="...">
+    <img src= "card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{viaje.destino}}</h5>
       <p class="card-text">Fecha salida: {{viaje.fecha_salida}}</p>
@@ -26,4 +28,3 @@ Viajes disponibles
 {% endfor %}
 
 {% endblock %}
-
