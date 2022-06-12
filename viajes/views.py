@@ -15,10 +15,10 @@ def listar_viajes(request):
 
 
 def listar_destinos(request):
-     lista_destinos = Destino.objects.all()
-     context = {'lista_destinos': lista_destinos}
+    lista_destinos = Destino.objects.all()
+    context = {'lista_destinos': lista_destinos}
 
-     return render ( request, 'lista_destinos.html', context=context)
+    return render ( request, 'lista_destinos.html', context=context)
 
 def listar_hoteles(request):
     lista_hoteles = Hotel.objects.all()
