@@ -38,7 +38,7 @@ def create_viaje(request):
                precio = form.cleaned_data ['precio'],
                destino = form.cleaned_data ['destino'],
                fecha_salida = form.cleaned_data ['fecha_salida'],
-               fecha_regreso = form.cleaned_data ['fechSa_regreso'],
+               fecha_regreso = form.cleaned_data ['fecha_regreso'],
             )
             context = {'new_viaje' : new_viaje}
         return render( request, 'create_viaje.html', context= context)
