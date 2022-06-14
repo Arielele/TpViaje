@@ -1,7 +1,11 @@
 Entrega1 + Agustin Vigliocco - Alexander Klein - Ariel Botello
 
->>> git clone https://github.com/Arielele/TpViaje
+>>>   git clone https://github.com/Arielele/TpViaje    <<<
 
-El proyecto representa una web donde buscar vuelos, hoteles y ver imágenes de los destinos. Cuenta con un formulario para agregar vuelos desde el navegador y una barra 
-de búsqueda para ver vuelos disponibles.
+El proyecto representa una web donde se pueden crear vuelos, listarlos y buscarlos en diferentes templates. A estos templates se acceden a traves del nav-bar, el cual tiene 3 opciones para listar, crear y buscar viajes:
 
+1)Viajes: Aca es donde se listan los viajes que se van creando.
+
+2)Crear Viajes: Aca es donde podemos crear el viaje ingresando el precio, el destino, la fecha de salida y de llegada. (ACLARACION: El formato de ingreso de las fechas es el siguiente: DD/MM/YYYY.
+
+3)Buscador: En esta seccion podemos buscar los destinos que hemos creado, listandose segun el destino buscado.
