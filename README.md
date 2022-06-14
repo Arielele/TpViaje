@@ -1,6 +1,9 @@
-Entrega1 + Agustin Vigliocco - Alexander Klein - Ariel Botello
+<h1> Entrega1 + Agustin Vigliocco - Alexander Klein - Ariel Botello </h1>
 
->>>   git clone https://github.com/Arielele/TpViaje    <<<
+>>>   git clone https://github.com/Arielele/TpViaje
+
+
+
 
 El proyecto representa una web donde se pueden crear vuelos, listarlos y buscarlos en diferentes templates. A estos templates se acceden a traves del nav-bar, el cual tiene 3 opciones para listar, crear y buscar viajes:
 
