@@ -2,28 +2,28 @@
 
 {% block titulo %}
 Viajes disponibles
-{% endblock %} 
+{% endblock %}
 
 {% block contenido %}
 
-<h1>Viajes disponibles:</h1>
-{% for viaje in lista_viajes %} 
+<h1 class="text-center text-uppercase">Viajes disponibles:</h1>
 
-<div class="card" style="width: 25rem;">
-    <img src= https://st.depositphotos.com/1107016/1239/v/950/depositphotos_12390723-stock-illustration-airplane-travel.jpg class="card-img-top" alt="...">
-    <div class="card-body">
+<div class="d-flex justify-content-around row bg-dark m-2">
+  {% for viaje in lista_viajes %}
+  <div class="card border-light my-3" style="width: 25rem;">
+    <img
+      src=https://st.depositphotos.com/1107016/1239/v/950/depositphotos_12390723-stock-illustration-airplane-travel.jpg
+      class="card-img-top" alt="...">
+    <div class="card-body text-center">
       <h5 class="card-title">{{viaje.destino}}</h5>
-      <p class="card-text">Fecha salida: {{viaje.fecha_salida}}</p>
-      <p class="card-text">Fecha regreso: {{viaje.fecha_regreso}}</p>
+      <p class="card-text">Fecha salida: {{viaje.fecha_salida|date:'d M Y'}}</p>
+      <p class="card-text">Fecha regreso: {{viaje.fecha_regreso|date:'d M Y'}}</p>
       <p class="card-text">Precio: ${{viaje.precio}}</p>
       <a href="#" class="btn btn-primary">Comprar !</a>
     </div>
   </div>
+  {% endfor %}
+</div>
 
-
-   
-     
-{% endfor %}
 
 {% endblock %}
-
