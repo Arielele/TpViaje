@@ -1,34 +1,33 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-   Arma tu viaje
-{% endblock %}   
+Arma tu viaje
+{% endblock %}
 
 {% block contenido %}
 {% if form %}
-      <h2>Arma tu viaje!</h2>
 
-      <form method="POST" action="">
-         {% csrf_token %} 
-         <table>
-            {{form.as_table}}
-         </table>
-         <input type="submit", value="Crear">
-      </form>
+<div class="d-flex align-items-center flex-column bg-primary text-right">
+   <h2 class="">Arma tu viaje!</h2>
+   <form method="POST" action="">
+      {% csrf_token %}
+      <table>
+         {{form.as_table}}
+      </table>
+      <input class="my-3" type="submit" , value="Crear">
+   </form>
+</div>
 {% elif new_viaje %}
-
-   <div class="card" style="width: 25rem;">
-      <img class ="card-img-top" src=".../100px180/" alt="...">
-      <div class="card-body">
+<div class="card">
+   <div class="card-body">
       <h5 class="card-title">{{new_viaje.destino}}</h5>
-      <p class="card-text">Fecha salida: {{new_viaje.fecha_salida}}</p>
-      <p class="card-text">Fecha regreso: {{new_viaje.fecha_regreso}}</p>
+      <p class="card-text">Fecha salida : {{new_viaje.fecha_salida | date:'d M Y'}}</p>
+      <p class="card-text">Fecha regreso : {{new_viaje.fecha_regreso | date:'d M Y'}}</p>
       <p class="card-text">precio: ${{new_viaje.precio}}</p>
       <a href="#" class="btn btn-primary">Aceptar y Continuar</a>
-      </div>
    </div>
+</div>
 
 {% endif %}
 
 {% endblock %}
-
