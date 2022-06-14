@@ -9,6 +9,6 @@ El proyecto representa una web donde se pueden crear vuelos, listarlos y buscarl
 
 1)Viajes: Aca es donde se listan los viajes que se van creando.
 
-2)Crear Viajes: Aca es donde podemos crear el viaje ingresando el precio, el destino, la fecha de salida y de llegada. (ACLARACION: El formato de ingreso de las fechas es el siguiente: DD/MM/YYYY.
+2)Crear Viajes: Aca es donde podemos crear el viaje ingresando el precio, el destino, la fecha de salida y de llegada. (<strong>ACLARACION: El formato de ingreso de las fechas es el siguiente: DD/MM/YYYY</strong>).
 
 3)Buscador: En esta seccion podemos buscar los destinos que hemos creado, listandose segun el destino buscado.
