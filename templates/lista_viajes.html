@@ -2,28 +2,28 @@
 
 {% block titulo %}
 Viajes disponibles
-{% endblock %} 
+{% endblock %}
 
 {% block contenido %}
 
 <h1>Viajes disponibles:</h1>
-{% for viaje in lista_viajes %} 
+{% for viaje in lista_viajes %}
 
-<div class="card" style="width: 25rem;">
-    <img src= https://st.depositphotos.com/1107016/1239/v/950/depositphotos_12390723-stock-illustration-airplane-travel.jpg class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{viaje.destino}}</h5>
-      <p class="card-text">Fecha salida: {{viaje.fecha_salida}}</p>
-      <p class="card-text">Fecha regreso: {{viaje.fecha_regreso}}</p>
-      <p class="card-text">Precio: ${{viaje.precio}}</p>
-      <a href="#" class="btn btn-primary">Comprar !</a>
-    </div>
+<div class="card d-flex justify-content-around" style="width: 25rem;">
+  <img src=https://st.depositphotos.com/1107016/1239/v/950/depositphotos_12390723-stock-illustration-airplane-travel.jpg
+    class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{viaje.destino}}</h5>
+    <p class="card-text">Fecha salida (dd/mm/yy): {{viaje.fecha_salida}}</p>
+    <p class="card-text">Fecha regreso (dd/mm/yy): {{viaje.fecha_regreso}}</p>
+    <p class="card-text">Precio: ${{viaje.precio}}</p>
+    <a href="#" class="btn btn-primary">Comprar !</a>
   </div>
+</div>
 
 
-   
-     
+
+
 {% endfor %}
 
 {% endblock %}
-
