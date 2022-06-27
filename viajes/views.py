@@ -5,6 +5,8 @@ from django.shortcuts import render
 from viajes.models import Viaje, Destino, Hotel
 from viajes.forms import Viaje_form
 
+
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def listar_viajes(request):
@@ -25,6 +27,7 @@ def listar_hoteles(request):
     context = {'lista_hoteles': lista_hoteles}
     
     return render ( request, 'lista_hoteles.html', context=context)
+
 
 def create_viaje(request):
     if request.method == 'GET':
