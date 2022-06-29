@@ -7,15 +7,21 @@ Registro
 {% block contenido %}
 
 
-<h2 class="d-flex align-self-center">Complete los campos para registrarse</h2>
-<h3>{{errors}}</h3>
-<form method="POST" action="">
-    {% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <input class="my-3" type="submit" , value="Ingresar">
-</form>
+<h2 class="d-flex justify-content-center text-uppercase">Complete los campos para registrarse</h2>
+
+<p>{{errors}}</p>
+
+
+<div style="text-align-last: left" class="d-flex justify-content-center text-center bg-secondary">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <div class="d-flex justify-content-center m-5">
+            <input class="btn btn-primary " type="submit" , value="Ingresar">
+        </div>
+    </form>
 </div>
 
 

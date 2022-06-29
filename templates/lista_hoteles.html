@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-   Busca tu hotel
-{% endblock %}   
+Busca tu hotel
+{% endblock %}
 
 {% block contenido %}
 
 <h1>Hoteles disponibles:</h1>
 Acá podrás buscar tu hotel cuanto termine el mantenimiento!
+
+<table>
+   {{form.as_table}}
+</table>
+
 {% endblock %}

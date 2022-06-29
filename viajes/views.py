@@ -3,7 +3,7 @@ from multiprocessing import context
 from django.shortcuts import render
 
 from viajes.models import Viaje, Destino, Hotel
-from viajes.forms import Viaje_form
+from viajes.forms import Viaje_form, Hotel_form
 
 
 from django.contrib.auth.decorators import login_required
@@ -54,3 +54,20 @@ def buscar_viajes(request):
     viajes = Viaje.objects.filter(destino__icontains=request.GET['buscar'])
     context = {'viajes': viajes}
     return render(request, 'buscar-viajes.html', context=context)
+
+
+def crear_hoteles(request):
+    if request.method == 'GET':
+        form = Hotel_form()
+        context = {'form': form}
+        return render(request, 'crear-hoteles.html', context=context)
+    else:
+        form = Hotel_form(request.POST)
+        if form.is_valid():
+            new_hotel = Hotel.objects.create(
+                nombre=form.cleaned_data['nombre'],
+                ciudad=form.cleaned_data['ciudad'],
+                precio=form.cleaned_data['precio'],
+            )
+            context = {'new_hotel': new_hotel}
+        return render(request, 'crear-hoteles.html', context=context)
