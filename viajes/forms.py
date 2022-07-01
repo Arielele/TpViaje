@@ -1,4 +1,5 @@
 from django import forms
+from viajes.models import Hotel
 
 
 class Viaje_form(forms.Form):
@@ -8,8 +9,7 @@ class Viaje_form(forms.Form):
     fecha_regreso = forms.DateField()
 
 
-class Hotel_form(forms.Form):
-    nombre = forms.CharField(max_length=30)
-    provincia = forms.CharField(max_length=20)
-    domicilio = forms.CharField(max_length=50)
-    precio = forms.FloatField()
+class Hotel_form(forms.ModelForm):
+    class Meta:
+        model = Hotel
+        fields = '__all__'

@@ -8,31 +8,43 @@ Busca tu hotel
 
 <h1>Hoteles disponibles:</h1>
 
-<div class="card">
+<div class="card container-fluid">
    <div class="card-header">
-      Lista de hoteles
+      <a name="" id="" class="btn btn-success" href="{% url 'crear_hotel' %}" role="button">Agregar Nuevo Hotel</a>
    </div>
    <div class="card-body">
       <h4 class="card-title">Hoteles</h4>
-
       <table class="table">
          <thead>
             <tr>
                <th>ID</th>
                <th>HOTEL</th>
+               <th>PAIS</th>
                <th>IMAGEN</th>
                <th>DESCRIPCION</th>
+               <th>PRECIO</th>
                <th>ACCIONES</th>
             </tr>
          </thead>
          <tbody>
+            {% for hotel in hoteles %}
             <tr>
-               <td>1</td>
-               <td>HOTELES</td>
-               <td>IMAGEN.JPG</td>
-               <td>UBICACION Y CANIDAD DE ESTRELLAS DEL HOTEL</td>
-               <td>EDITAR | BORRAR</td>
+               <td>{{hotel.id}}</td>
+               <td>{{hotel.nombre}}</td>
+               <td>{{hotel.pais}}</td>
+               <td>
+                  <img src=" {{ hotel.imagen.url }} " height="100" />
+
+               </td>
+               <td>{{hotel.descripcion}}</td>
+               <td>$ {{hotel.precio}}</td>
+               <td>
+                  <a name="" id="" class="btn btn-info" href="{%url 'editar_hotel'%}" role="button">EDITAR</a>
+                  |
+                  <a name="" id="" class="btn btn-danger" href="#" role="button">BORRAR</a>
+               </td>
             </tr>
+            {% endfor %}
          </tbody>
       </table>
 

@@ -1,0 +1,14 @@
+<form enctype="multipart/form-data" method="post">
+    {%csrf_token%}
+    {% for campo in formulario %}
+    <div class="form-group">
+        <label for="nombre">{{campo.label}}</label>
+        <input type="{{campo.field.widget.input_type}}" class="form-control" id="" name="" value="{{ hotel.nombre }}">
+
+    </div>
+    <div class="col-12 help-text"> {{campo.errors}}</div>
+    {%endfor%}
+
+    <input name="" id="" class="btn btn-primary" type="submit" value="Enviar">
+
+</form>

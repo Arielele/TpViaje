@@ -25,13 +25,6 @@ def listar_destinos(request):
     return render(request, 'lista_destinos.html', context=context)
 
 
-def listar_hoteles(request):
-    lista_hoteles = Hotel.objects.all()
-    context = {'lista_hoteles': lista_hoteles}
-
-    return render(request, 'lista_hoteles.html', context=context)
-
-
 def create_viaje(request):
     if request.method == 'GET':
         form = Viaje_form()
@@ -58,4 +51,14 @@ def buscar_viajes(request):
 
 
 def listar_hoteles(request):
-    return render(request, 'lista_hoteles.html')
+    hoteles = Hotel.objects.all()
+    return render(request, 'lista_hoteles.html', {'hoteles': hoteles})
+
+
+def crear_hotel(request):
+    formulario = Hotel_form(request.POST or None)
+    return render(request, 'crear-hotel.html', {'formulario': formulario})
+
+
+def editar_hotel(request):
+    return render(request, 'editar-hotel.html')
