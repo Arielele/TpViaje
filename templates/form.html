@@ -4,8 +4,14 @@
 
     <div class="form-group">
         <label for="nombre">{{campo.label}}</label>
+
+        {% if campo.field.widget.input_type == 'file' and campo.value %}
+        <br />
+        <img src="{{MEDIA_URL}}/media/{{campo.value}}" width="200" alt="">
+        {% endif %}
+
         <input type="{{campo.field.widget.input_type}}" class="form-control" id="" name="{{ campo.name }}"
-            value="{{ hotel.nombre }}" placeholder="{{ campo.label }}">
+            value="{{ campo.value }}" placeholder="{{ campo.label }}">
     </div>
 
     <div class="col-12 help-text">
@@ -14,6 +20,10 @@
 
     {%endfor%}
 
-    <input name="" id="" class="btn btn-primary float-right" type="submit" value="Enviar informacion">
+    <div class="float-right">
+        <input name="" id="" class="btn btn-primary float-right" type="submit" value="Enviar informacion">
+        <a name="" id="" class="btn btn-danger mx-4" href="{% url 'lista_hoteles' %}" role="button">Cancelar</a>
+    </div>
+
 
 </form>

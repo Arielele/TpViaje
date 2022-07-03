@@ -39,9 +39,10 @@ Busca tu hotel
                <td>{{hotel.descripcion}}</td>
                <td>$ {{hotel.precio}}</td>
                <td>
-                  <a name="" id="" class="btn btn-info" href="{%url 'editar_hotel'%}" role="button">EDITAR</a>
+                  <a name="" id="" class="btn btn-info" href="{%url 'editar_hotel' hotel.id%}" role="button">EDITAR</a>
                   |
-                  <a name="" id="" class="btn btn-danger" href="#" role="button">BORRAR</a>
+                  <a name="" id="" class="btn btn-danger" href="{%url 'eliminar_hotel' hotel.id%}"
+                     role="button">BORRAR</a>
                </td>
             </tr>
             {% endfor %}

@@ -63,5 +63,17 @@ def crear_hotel(request):
     return render(request, 'crear-hotel.html', {'formulario': formulario})
 
 
-def editar_hotel(request):
-    return render(request, 'editar-hotel.html')
+def editar_hotel(request, id):
+    hotel = Hotel.objects.get(id=id)
+    formulario = Hotel_form(request.POST or None,
+                            request.FILES or None, instance=hotel)
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('lista_hoteles')
+    return render(request, 'editar-hotel.html', {'formulario': formulario})
+
+
+def eliminar_hotel(request, id):
+    hotel = Hotel.objects.get(id=id)
+    hotel.delete()
+    return redirect('lista_hoteles')
