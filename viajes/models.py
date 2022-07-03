@@ -1,7 +1,7 @@
 from distutils.command.upload import upload
 from django.db import models
 from django.utils.timezone import now
-from requests import delete
+# from requests import delete
 
 # Create your models here.
 

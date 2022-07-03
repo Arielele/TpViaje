@@ -77,3 +77,7 @@ def eliminar_hotel(request, id):
     hotel = Hotel.objects.get(id=id)
     hotel.delete()
     return redirect('lista_hoteles')
+
+
+def aboutUs(request):
+    return render(request, 'aboutUs.html')
