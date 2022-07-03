@@ -1,4 +1,3 @@
-from sys import path_importer_cache
 from django.urls import path
 from viajes.views import crear_hotel, listar_viajes, listar_destinos, listar_hoteles, create_viaje, buscar_viajes, editar_hotel, eliminar_hotel, aboutUs
 from django.contrib.auth.decorators import login_required
@@ -16,6 +15,7 @@ urlpatterns = [
          login_required(eliminar_hotel), name='eliminar_hotel'),
     path('editar-hotel/<int:id>/',
          login_required(editar_hotel), name='editar_hotel'),
+
     path('sobre-nosotros/', aboutUs, name='sobre-nosotros')
 
 

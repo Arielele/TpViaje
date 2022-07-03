@@ -29,7 +29,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'lista_hoteles'%}">Hoteles</a>
         </li>
-        <li class="nav-item" style = "margin-right: 50rem">
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'sobre-nosotros'%}">Sobre Nosotros</a>
         </li>
         {% if request.user.is_authenticated %}
@@ -38,7 +38,7 @@
         </li>
         {% else %}
 
-        <li class="nav-item" >
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'login'%}">Ingresar</a>
         </li>
         <li class="nav-item">

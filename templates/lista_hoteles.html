@@ -33,8 +33,9 @@ Busca tu hotel
                <td>{{hotel.nombre}}</td>
                <td>{{hotel.pais}}</td>
                <td>
+                  {% if hotel.imagen %}
                   <img src=" {{ hotel.imagen.url }} " height="100" />
-
+                  {% endif %}
                </td>
                <td>{{hotel.descripcion}}</td>
                <td>$ {{hotel.precio}}</td>
