@@ -29,7 +29,7 @@ class Destino(models.Model):
 
 class Hotel(models.Model):
     id = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=30, verbose_name='Titulo')
+    nombre = models.CharField(max_length=30, verbose_name='Nombre Hotel')
     pais = models.CharField(max_length=20)
     descripcion = models.TextField(null=True, verbose_name='Descripcion')
     imagen = models.ImageField(

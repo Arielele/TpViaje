@@ -56,7 +56,10 @@ def listar_hoteles(request):
 
 
 def crear_hotel(request):
-    formulario = Hotel_form(request.POST or None)
+    formulario = Hotel_form(request.POST or None, request.FILES or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('lista_hoteles')
     return render(request, 'crear-hotel.html', {'formulario': formulario})
 
 
