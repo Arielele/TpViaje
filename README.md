@@ -1,8 +1,10 @@
 <h1> Entrega1 + Agustin Vigliocco - Alexander Klein - Ariel Botello </h1>
 
+<h2>
 > > > git clone https://github.com/Arielele/TpViaje
 > > > Username: useradmin
 > > > Password: admin123
+</h2>
 
 El proyecto trata sobre una agencia de viajes donde podemos crear un itinerario de
 viajes y hospedaje en hoteles. Solo se podrá crear, modificar o eliminar informacion estando logueados en la APP.
@@ -15,4 +17,4 @@ para poder acceder a las secciones: CREAR VIAJE, HOTELES (para poder modificar,a
 Necesaria para poder acceder a las secciones: CREAR VIAJE, HOTELES (para poder modificar,agregar o eliminar algun
 hotel) <br> 7)<strong>CERRAR SESION:</strong> En esta seccion podemos cerrar la sesion actual</h5>
 
-<h2> <strong>LINK AL VIDEO</strong> https://vimeo.com/727185650/79423b83d0 </h2>
+<h3> <strong>LINK AL VIDEO</strong> https://vimeo.com/727185650/79423b83d0 </h3>
