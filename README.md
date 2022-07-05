@@ -1,6 +1,6 @@
 <h1> Entrega1 + Agustin Vigliocco - Alexander Klein - Ariel Botello </h1>
 
-<h2>
+<h2> <br>
 > > > git clone https://github.com/Arielele/TpViaje
 > > > Username: useradmin
 > > > Password: admin123
